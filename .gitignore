@@ -44,6 +44,7 @@ Makefile
 # Doxygen generated output (CRITICAL)
 docs/html/
 docs/latex/
+docs/theme/
 
 # IDE specific folders (VS Code, Visual Studio)
 .vscode/
