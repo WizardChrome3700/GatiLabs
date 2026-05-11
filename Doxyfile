@@ -1,0 +1,15 @@
+PROJECT_NAME = "Multi Vehicle Simulator"
+
+PROJECT_BRIEF = "High-fidelity C++ multivehicle simulator for hobbyists and researcher"
+
+OUTPUT_DIRECTORY = docs/
+
+INPUT = include/ src/
+
+RECURSIVE = YES
+
+EXCLUDE = assets/ configs/ build/ .vscode/ .idea/ .git/ CMakeFiles/ CMakeCache.txt
+
+EXTRACT_ALL = YES
+
+GENERATE_HTML = YES
