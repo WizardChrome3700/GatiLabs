@@ -1,0 +1,63 @@
+ex
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# CMake build directories (CRITICAL)
+benchmark_libraries/
+build/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Doxygen generated output (CRITICAL)
+docs/html/
+docs/latex/
+
+# IDE specific folders (VS Code, Visual Studio)
+.vscode/
+.vs/
+*.sln
+*.vcxproj
+*.vcxproj.user
+
+# Python temp files (from your XFOIL scripts)
+__pycache__/
+*.pyc
+temp_d*.txt
+
+# Miscellaneous
+Miscellaneous/
+XFOIL6.99
+XFOIL6.99.zip
