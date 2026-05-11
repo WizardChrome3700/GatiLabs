@@ -1,0 +1,9 @@
+{
+  "type": "quadcopter",
+  "dry_mass_kg": 0.358, 
+  "moi_diagonal_kgm2": {
+    "xx": 0.005,
+    "yy": 0.005,
+    "zz": 0.008
+  }
+}

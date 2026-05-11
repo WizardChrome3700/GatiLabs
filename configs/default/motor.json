@@ -1,0 +1,67 @@
+{
+    "1": {
+        "kv_rating": 1750,
+        "phase_resistance_ohms": 0.045,
+        "no_load_current_amps": 1.5,
+        "max_current_amps": 50.0,
+        "magnet_grade": "N52",
+        "stator_height_m": 0.007,
+        "stator_diameter_m": 0.022,
+        "mass_kg": 0.035,
+        "pos": {
+            "x": 0.5,
+            "y": 0.5,
+            "z": 0.0
+        },
+        "spin_direction": -1
+    },
+    "2": {
+        "kv_rating": 1750,
+        "phase_resistance_ohms": 0.045,
+        "no_load_current_amps": 1.5,
+        "max_current_amps": 50.0,
+        "magnet_grade": "N52",
+        "stator_height_m": 0.007,
+        "stator_diameter_m": 0.022,
+        "mass_kg": 0.035,
+        "pos": {
+            "x": 0.5,
+            "y": -0.5,
+            "z": 0.0
+        },
+        "spin_direction": 1
+    },
+    "3": {
+        "kv_rating": 1750,
+        "phase_resistance_ohms": 0.045,
+        "no_load_current_amps": 1.5,
+        "max_current_amps": 50.0,
+        "magnet_grade": "N52",
+        "stator_height_m": 0.007,
+        "stator_diameter_m": 0.022,
+        "mass_kg": 0.035,
+        "pos": {
+            "x": -0.5,
+            "y": 0.5,
+            "z": 0.0
+        },
+        "spin_direction": -1
+    },
+    "4": {
+        "kv_rating": 1750,
+        "phase_resistance_ohms": 0.045,
+        "no_load_current_amps": 1.5,
+        "max_current_amps": 50.0,
+        "magnet_grade": "N52",
+        "stator_height_m": 0.007,
+        "stator_diameter_m": 0.022,
+        "mass_kg": 0.035,
+        "pos": {
+            "x": -0.5,
+            "y": -0.5,
+            "z": 0.0
+        },
+        "spin_direction": 1
+
+    } 
+}

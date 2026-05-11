@@ -1,0 +1,7 @@
+{
+    "cells": 4,
+    "capacity_Ah": 1.5,
+    "internal_resistance_ohms": 0.005,
+    "c_rating_continuous": 100.0,
+    "c_rating_burst": 150.0
+}
