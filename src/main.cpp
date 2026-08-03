@@ -2,6 +2,9 @@
 #include <array>
 #include <Eigen/Dense>
 #include <json.hpp>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 #include "Vehicles/Quadcopter.hpp"
 #include "Battery/LipoBattery.hpp"
@@ -14,7 +17,13 @@
 int main() {
 
     // 1. Get the generic vehicle pointer
-    std::unique_ptr<Vehicle> my_drone = VehicleFactory::build_vehicle("configs\\default");
+    fs::path config_dir = "configs";
+    fs::path vehicle_config = "default";
+    fs::path vehicle_config_path = config_dir / vehicle_config;
+    if( !fs::exists(vehicle_config_path) ) {
+        throw std::runtime_error("Vehicle configuration not found at: " + vehicle_config_path.string());
+    }
+    std::unique_ptr<Vehicle> my_drone = VehicleFactory::build_vehicle(vehicle_config_path.string());
 
     // 2. Downcast it to a Quadcopter reference
     Quadcopter& quad = dynamic_cast<Quadcopter&>(*my_drone);
