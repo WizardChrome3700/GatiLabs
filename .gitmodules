@@ -7,3 +7,6 @@
 [submodule "darxygen"]
 	path = darxygen
 	url = https://github.com/CrowCpp/darxygen.git
+[submodule "docs/theme/darxygen"]
+	path = docs/theme/darxygen
+	url = https://github.com/CrowCpp/darxygen.git

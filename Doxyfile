@@ -1,27 +1,37 @@
-PROJECT_NAME = "Multi Vehicle Simulator"
+# ==============================================================================
+# PROJECT IDENTITY
+# ==============================================================================
+PROJECT_NAME           = "Multi Vehicle Simulator"
+PROJECT_BRIEF          = "High-fidelity C++ multivehicle simulator for hobbyists and researcher"
 
-PROJECT_BRIEF = "High-fidelity C++ multivehicle simulator for hobbyists and researcher"
+# ==============================================================================
+# INPUT & OUTPUT SETTINGS
+# ==============================================================================
+OUTPUT_DIRECTORY       = docs/
+INPUT                  = include/ src/
+RECURSIVE              = YES
+EXCLUDE                = assets/ configs/ build/ .vscode/ docs/theme/doxygen-awesome .idea/ .git/ CMakeFiles/ CMakeCache.txt
+EXTRACT_ALL            = YES
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
 
-OUTPUT_DIRECTORY = docs/
+# ==============================================================================
+# DOXYGEN AWESOME CORE SETTINGS
+# ==============================================================================
+# HTML_HEADER            = docs/theme/header.html
+HTML_COLORSTYLE        = TOGGLE
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_TIMESTAMP         = NO
 
-INPUT = include/ src/
+# ==============================================================================
+# DOXYGEN AWESOME CSS & JAVASCRIPT EXTENSIONS
+# ==============================================================================
+HTML_EXTRA_STYLESHEET  = docs/theme/doxygen-awesome/doxygen-awesome.css
 
-RECURSIVE = YES
-
-EXCLUDE = assets/ configs/ build/ .vscode/ docs/theme/doxygen-awesome .idea/ .git/ CMakeFiles/ CMakeCache.txt
-
-EXTRACT_ALL = YES
-
-GENERATE_HTML = YES
-
-HTML_HEADER            = docs/theme/header.html
-
-HTML_EXTRA_STYLESHEET = docs/theme/doxygen-awesome/doxygen-awesome.css
-
-HTML_EXTRA_FILES      = docs/theme/doxygen-awesome/doxygen-awesome-darkmode-toggle.js \
-                        docs/theme/doxygen-awesome/doxygen-awesome-fragment-copy-button.js \
-                        docs/theme/doxygen-awesome/doxygen-awesome-paragraph-link.js \
-                        docs/theme/doxygen-awesome/doxygen-awesome-interactive-toc.js \
-                        docs/theme/doxygen-awesome/doxygen-awesome-tabs.js
-
-HTML_COLORSTYLE       = LIGHT
+HTML_EXTRA_FILES       = docs/theme/doxygen-awesome/doxygen-awesome-darkmode-toggle.js \
+                         docs/theme/doxygen-awesome/doxygen-awesome-fragment-copy-button.js \
+                         docs/theme/doxygen-awesome/doxygen-awesome-paragraph-link.js \
+                         docs/theme/doxygen-awesome/doxygen-awesome-interactive-toc.js \
+                         docs/theme/doxygen-awesome/doxygen-awesome-tabs.js
