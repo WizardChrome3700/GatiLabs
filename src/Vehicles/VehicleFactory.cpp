@@ -2,14 +2,19 @@
 #include <json.hpp>
 #include <fstream>
 #include <vector>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 std::unique_ptr<Vehicle> VehicleFactory::build_vehicle(const std::string& config_path) {
     // 1. Parse JSON
-    std::string frame_path = config_path + "\\frame.json";
-    std::ifstream config_file(frame_path);
+    fs::path config_folder = config_path;
+    fs::path file = "frame.json";
+    fs::path frame_path = config_folder / file;
+    // std::string frame_path = config_path + "\\frame.json";
+    std::ifstream config_file(frame_path.string());
     nlohmann::json config_data;
     config_file >> config_data;
-    
 
     std::string type = config_data["type"];
 
@@ -17,21 +22,36 @@ std::unique_ptr<Vehicle> VehicleFactory::build_vehicle(const std::string& config
     if (type == "quadcopter") {
         
         // ... extract your 4 motors, 4 escs, etc. ...
-        std::string motor_path = config_path + "\\motor.json";
-        std::string battery_path = config_path + "\\battery.json";
-        std::string esc_path = config_path + "\\esc.json";
-        std::string propeller_path = config_path + "\\propeller.json";
+        file = "motor.json";
+        fs::path motor_path = config_folder / file;
+        file = "battery.json";
+        fs::path battery_path = config_folder / file;
+        file = "esc.json";
+        fs::path esc_path = config_folder / file;
+        file = "propeller.json";
+        fs::path propeller_path = config_folder / file;
 
-
-        LipoBattery battery = VehicleFactory::build_battery(battery_path);
-        BETRotor prop = VehicleFactory::build_prop(propeller_path);
+        if( !fs::exists(battery_path) ) {
+            throw std::runtime_error("Battery configuration not found at: " + battery_path.string());
+        }
+        LipoBattery battery = VehicleFactory::build_battery(battery_path.string());
+        if( !fs::exists(propeller_path) ) {
+            throw std::runtime_error("Propeller configuration not found at: " + propeller_path.string());
+        }
+        BETRotor prop = VehicleFactory::build_prop(propeller_path.string());
         std::array<ESC, 4> escs;
-        std::vector<ESC> esc_temp = VehicleFactory::build_escs(esc_path);
+        if( !fs::exists(esc_path) ) {
+            throw std::runtime_error("ESC configuration not found at: " + esc_path.string());
+        }
+        std::vector<ESC> esc_temp = VehicleFactory::build_escs(esc_path.string());
         for(int i = 0; i < 4; i++) {
             escs[i] = esc_temp[i];
         }
         std::array<BLDC_Motor, 4> motors;
-        std::vector<BLDC_Motor> motor_temp = VehicleFactory::build_motors(motor_path, prop);
+        if( !fs::exists(motor_path) ) {
+            throw std::runtime_error("Motor configuration not found at: " + motor_path.string());
+        }
+        std::vector<BLDC_Motor> motor_temp = VehicleFactory::build_motors(motor_path.string(), prop);
         for(int i = 0; i < 4; i++) {
             motors[i] = motor_temp[i];
         }
